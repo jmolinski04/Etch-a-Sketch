@@ -1,14 +1,15 @@
 const popupBtn = document.querySelector(".popup-btn");
+const container = document.querySelector(".container");
 
-const createGridLayout = (numberOfSquares) => {
-  const container = document.querySelector(".container");
-  container.innerHTML = "";
-
+const createGrid = (numberOfSquares) => {
   for (let i = 0; i < numberOfSquares; i++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
     const square = document.createElement("div");
     square.classList.add("square");
-    container.appendChild(square);
+    row.appendChild(square);
+    container.appendChild(row);
   }
 };
 
-createGridLayout(16);
+createGrid(64);

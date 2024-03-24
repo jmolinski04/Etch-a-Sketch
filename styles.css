@@ -25,11 +25,34 @@ body {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
 }
 
 .square {
-  width: 50px;
-  height: 50px;
-  background-color: yellow;
   border: 1px solid #000;
+  flex: 1;
+}
+
+.row {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.popup-btn {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #d7e4c0;
+  color: #000;
+}
+
+.popup-btn:hover {
+  background-color: #c6dcba;
 }
