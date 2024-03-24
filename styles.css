@@ -20,26 +20,6 @@ body {
   margin-top: 50px;
 }
 
-.container {
-  background-color: #fff;
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
-}
-
-.square {
-  border: 1px solid #000;
-  flex-grow: 1;
-}
-
-.row {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 button {
   margin-top: 15px;
   cursor: pointer;
@@ -51,6 +31,31 @@ button {
   font-size: 18px;
   background-color: #d7e4c0;
   color: #000;
+}
+
+.container {
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  border: 1px solid black;
 }
 
 .popup-btn:hover {

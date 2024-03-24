@@ -1,15 +1,19 @@
 const popupBtn = document.querySelector(".popup-btn");
 const container = document.querySelector(".container");
 
-const createGrid = (numberOfSquares) => {
-  for (let i = 0; i < numberOfSquares; i++) {
+const createBoard = (numberOfRows) => {
+  for (let i = 0; i < numberOfRows; i++) {
     const row = document.createElement("div");
     row.classList.add("row");
-    const square = document.createElement("div");
-    square.classList.add("square");
-    row.appendChild(square);
+
+    for (let j = 0; j < numberOfRows; j++) {
+      const column = document.createElement("div");
+      column.classList.add("column");
+      row.appendChild(column);
+    }
+
     container.appendChild(row);
   }
 };
 
-createGrid(4);
+createBoard(5);
