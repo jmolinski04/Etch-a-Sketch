@@ -12,4 +12,4 @@ const createGrid = (numberOfSquares) => {
   }
 };
 
-createGrid(64);
+createGrid(4);
