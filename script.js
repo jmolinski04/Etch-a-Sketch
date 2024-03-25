@@ -30,3 +30,9 @@ const popupWindow = () => {
 
 window.addEventListener("load", () => createBoard(defaultBoardSize));
 popupBtn.addEventListener("click", popupWindow);
+
+// Create better error messages
+// 1) Dynamically create a <p> element
+// 2) Add custom styling to it
+// 3) Append it as a sections child
+// 4) Update te code in the popupWindow function
