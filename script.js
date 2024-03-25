@@ -1,5 +1,6 @@
 const popupBtn = document.querySelector(".popup-btn");
 const container = document.querySelector(".container");
+const defaultBoardSize = 16;
 
 const createBoard = (numberOfSquares) => {
   for (let i = 0; i < numberOfSquares; i++) {
@@ -18,13 +19,15 @@ const createBoard = (numberOfSquares) => {
 
 const popupWindow = () => {
   const userInput = parseInt(prompt("Enter desired size for the board"));
-  if (!userInput) {
-    alert("Please input a number");
-  } else if (userInput > 100 || userInput < 1) {
+  if (userInput > 100 || userInput < 1 || userInput === 0) {
     alert("Your input cannot be bigger than 100, nor less than 0");
+  } else if (!userInput) {
+    alert("Please input a number");
   } else {
+    container.innerHTML = "";
     createBoard(userInput);
   }
 };
 
+window.addEventListener("load", () => createBoard(defaultBoardSize));
 popupBtn.addEventListener("click", popupWindow);
