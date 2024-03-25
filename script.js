@@ -12,7 +12,6 @@ const createBoard = (numberOfSquares) => {
       column.classList.add("column");
       row.appendChild(column);
     }
-
     container.appendChild(row);
   }
 };
