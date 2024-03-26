@@ -1,5 +1,6 @@
 const popupBtn = document.querySelector(".popup-btn");
 const container = document.querySelector(".container");
+const errorParagraph = document.querySelector(".error-msg");
 const defaultBoardSize = 16;
 
 const createBoard = (numberOfSquares) => {
@@ -16,23 +17,23 @@ const createBoard = (numberOfSquares) => {
   }
 };
 
+const displayParagraph = () => (errorParagraph.style.display = "block");
+
 const popupWindow = () => {
   const userInput = parseInt(prompt("Enter desired size for the board"));
   if (userInput > 100 || userInput < 1 || userInput === 0) {
-    alert("Your input cannot be bigger than 100, nor less than 0");
+    errorParagraph.textContent =
+      "Your input cannot be bigger than 100, nor less than 0";
+    displayParagraph();
   } else if (!userInput) {
-    alert("Please input a number");
+    errorParagraph.textContent = "Input a number";
+    displayParagraph();
   } else {
     container.innerHTML = "";
+    errorParagraph.textContent = "";
     createBoard(userInput);
   }
 };
 
 window.addEventListener("load", () => createBoard(defaultBoardSize));
 popupBtn.addEventListener("click", popupWindow);
-
-// Create better error messages
-// 1) Dynamically create a <p> element
-// 2) Add custom styling to it
-// 3) Append it as a sections child
-// 4) Update te code in the popupWindow function
