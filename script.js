@@ -1,4 +1,5 @@
 const popupBtn = document.querySelector(".popup-btn");
+const clearBtn = document.querySelector(".clear-btn");
 const container = document.querySelector(".container");
 const errorParagraph = document.querySelector(".error-msg");
 const defaultBoardSize = 16;
@@ -13,8 +14,9 @@ const createBoard = (numberOfSquares) => {
       column.classList.add("column");
       row.appendChild(column);
 
-      column.addEventListener("mouseover", (e) => {
-        column.style.backgroundColor = "#000";
+      column.addEventListener("mouseover", () => colorTheBoard(column));
+      clearBtn.addEventListener("click", () => {
+        column.style.backgroundColor = "#fff";
       });
     }
 
@@ -23,6 +25,7 @@ const createBoard = (numberOfSquares) => {
 };
 
 const displayParagraph = () => (errorParagraph.style.display = "block");
+const colorTheBoard = (square) => (square.style.backgroundColor = "#000");
 
 const changeBoardSize = () => {
   const userInput = parseInt(prompt("Enter desired size for the board"));
