@@ -12,6 +12,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+button {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
 .main-section {
   display: flex;
   justify-content: center;
@@ -20,17 +25,28 @@ body {
   margin-top: 50px;
 }
 
-button {
-  margin-top: 15px;
-  cursor: pointer;
-}
-
-.popup-btn {
+.btn {
   padding: 15px;
   border-radius: 10px;
   font-size: 18px;
   background-color: #d7e4c0;
   color: #000;
+}
+
+.btn:hover {
+  background-color: #c6dcba;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  gap: 10px;
+}
+
+.clear-btn,
+.popup-btn {
+  width: 100%;
 }
 
 .container {
@@ -56,10 +72,6 @@ button {
   flex-basis: 100%;
   flex: 1;
   border: 1px solid black;
-}
-
-.popup-btn:hover {
-  background-color: #c6dcba;
 }
 
 .error-msg {
