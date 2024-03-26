@@ -14,7 +14,10 @@ const createBoard = (numberOfSquares) => {
       column.classList.add("column");
       row.appendChild(column);
 
-      column.addEventListener("mouseover", () => colorTheBoard(column));
+      column.addEventListener(
+        "mouseover",
+        () => (column.style.backgroundColor = "#000")
+      );
       clearBtn.addEventListener("click", () => {
         column.style.backgroundColor = "#fff";
       });
@@ -25,7 +28,6 @@ const createBoard = (numberOfSquares) => {
 };
 
 const displayParagraph = () => (errorParagraph.style.display = "block");
-const colorTheBoard = (square) => (square.style.backgroundColor = "#000");
 
 const changeBoardSize = () => {
   const userInput = parseInt(prompt("Enter desired size for the board"));
