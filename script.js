@@ -12,14 +12,19 @@ const createBoard = (numberOfSquares) => {
       const column = document.createElement("div");
       column.classList.add("column");
       row.appendChild(column);
+
+      column.addEventListener("mouseover", (e) => {
+        column.style.backgroundColor = "#000";
+      });
     }
+
     container.appendChild(row);
   }
 };
 
 const displayParagraph = () => (errorParagraph.style.display = "block");
 
-const popupWindow = () => {
+const changeBoardSize = () => {
   const userInput = parseInt(prompt("Enter desired size for the board"));
   if (userInput > 100 || userInput < 1 || userInput === 0) {
     errorParagraph.textContent =
@@ -36,4 +41,4 @@ const popupWindow = () => {
 };
 
 window.addEventListener("load", () => createBoard(defaultBoardSize));
-popupBtn.addEventListener("click", popupWindow);
+popupBtn.addEventListener("click", changeBoardSize);
